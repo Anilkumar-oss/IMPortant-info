@@ -46,4 +46,138 @@ GO
 
 
 
+stored procedure:
 
+SQLCopy
+-- Create a new stored procedure called 'getCustomer' in schema 'dbo'
+-- Drop the stored procedure if it already exists
+IF EXISTS (
+SELECT *
+FROM INFORMATION_SCHEMA.ROUTINES
+WHERE SPECIFIC_SCHEMA = N
+AND SPECIFIC_NAME = N'getCustomer'
+)
+DROP PROCEDURE dbo.getCustomer
+GO
+-- Create the stored procedure in the specified schema
+CREATE PROCEDURE dbo.getCustomer
+@ID int
+-- add more stored procedure parameters here
+AS
+-- body of the stored procedure
+SELECT c.CustomerId,
+c.Name,
+c.Location,
+c.Email
+FROM dbo.Customers c
+WHERE c.CustomerId = @
+FOR JSON PATH
+Change All Occurrences. Now type getCustomer and all StoredProcedureName
+SchemaName to dbo.
+The snippet contains placeholder parameters and body text that needs updating.
+statement also contains placeholder text because it doesn't know how many
+parameters the procedure will have. For this tutorial update the snippet so it looks like t
+Create a new stored procedure called 'getCustomer' in schema 'dbo'
+Drop the stored procedure if it already exists
+INFORMATION_SCHEMA.ROUTINES
+SPECIFIC_SCHEMA = N'dbo'
+'getCustomer'
+dbo.getCustomer
+Create the stored procedure in the specified schema
+dbo.getCustomer
+add more stored procedure parameters here
+body of the stored procedure
+c.CustomerId,
+c.CustomerId = @ID
+StoredProcedureName entries change The snippet contains placeholder parameters and body text that needs updating.
+statement also contains placeholder text because it doesn't know how many
+parameters the procedure will have. For this tutorial update the snippet so it looks like the following Create a new stored procedure called 'getCustomer' in schema 'dbo'
+GO
+-- example to execute the stored procedure we just created
+EXECUTE dbo.getCustomer 1
+GO
+
+
+
+SQLCopy
+-- Create a new stored procedure called 'setCustomer' in schema 'dbo'
+-- Drop the stored procedure if it already exists
+IF EXISTS (
+SELECT *
+ FROM INFORMATION_SCHEMA.ROUTINES
+ WHERE SPECIFIC_SCHEMA = N
+ AND SPECIFIC_NAME = N
+)
+DROP PROCEDURE dbo.setCustomer
+GO
+-- Create the stored procedure in the specified schema
+CREATE PROCEDURE dbo.setCustomer
+ @json_val nvarchar
+The table definition appears so you can quickly see what columns are in the table. Refer to the
+list to easily complete the statements for your stored procedure. Finish creating the INSERT
+statement you added previously to complete the body of the stored procedure, and close the peek
+dbo.Customers (CustomerId, Name, Location, Email)
+CustomerId, Name, Location, Email
+OPENJSON (@json_val)
+( CustomerId int,
+nvarchar(50),
+nvarchar(50),
+nvarchar(50)
+Delete (or comment out) the EXECUTE command at the bottom of the query.
+The entire statement should look like the following code:
+Create a new stored procedure called 'setCustomer' in schema 'dbo'
+Drop the stored procedure if it already exists
+INFORMATION_SCHEMA.ROUTINES
+SPECIFIC_SCHEMA = N'dbo'
+SPECIFIC_NAME = N'setCustomer'
+dbo.setCustomer
+Create the stored procedure in the specified schema
+dbo.setCustomer
+nvarchar(max)
+The table definition appears so you can quickly see what columns are in the table. Refer to the
+list to easily complete the statements for your stored procedure. Finish creating the INSERT statement you added previously to complete the body of the stored procedure, and close the peek , Location, Email)
+command at the bottom of the query.
+Create a new stored procedure called 'setCustomer' in schema 'dbo'
+AS
+ -- body of the stored procedure
+ INSERT INTO dbo.Customers (CustomerId,
+ SELECT CustomerId,
+ FROM OPENJSON (@json_val)
+ WITH( CustomerId
+ Name nvarchar
+ Location nvarchar
+ Email nvarchar
+ )
+GO
+
+
+SQLCopy
+-- example to execute the stored procedure we just created
+declare @json nvarchar
+N'[
+ {
+ "CustomerId": 5,
+ "Name": "Lucy",
+ "Location": "Canada",
+ "Email": "lucy0@adventure
+ }
+]'
+EXECUTE dbo.setCustomer @json_val = @
+GO
+EXECUTE dbo.getCustomer @
+7. Execute the script by pressing
+information in JSON format. Click the result to open a formatted view.
+The previous steps show how you can easily get the properly formatted data to complete the call to
+procedure. You can see the following code uses the same JSON format with new
+customer details so we can test the setCustomer procedure. The statement includes syntax to declare
+the parameter and run the new get and set procedures. You can paste the copied
+previous section and edit it so it is the same as the following example, or simply paste the following
+statement into the query editor.
+example to execute the stored procedure we just created
+nvarchar(max) =
+"CustomerId": 5,
+"Name": "Lucy",
+"Location": "Canada",
+"Email": "lucy0@adventure-works.com"
+dbo.setCustomer @json_val = @json
+dbo.getCustomer @ID = 5
