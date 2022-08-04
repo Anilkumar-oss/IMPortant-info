@@ -181,3 +181,42 @@ nvarchar(max) =
 "Email": "lucy0@adventure-works.com"
 dbo.setCustomer @json_val = @json
 dbo.getCustomer @ID = 5
+
+SQLCopy
+-- example to execute the stored procedure we just created
+declare @json nvarchar
+N'[
+ {
+ "CustomerId": 5,
+ "Name": "Lucy",
+ "Location": "Canada",
+ "Email": "lucy0@adventure
+ }
+]'
+EXECUTE dbo.setCustomer @json_val = @
+GO
+EXECUTE dbo.getCustomer @
+7. Execute the script by pressing
+information in JSON format. Click the result to open a formatted view.
+The previous steps show how you can easily get the properly formatted data to complete the call to
+procedure. You can see the following code uses the same JSON format with new
+customer details so we can test the setCustomer procedure. The statement includes syntax to declare
+the parameter and run the new get and set procedures. You can paste the copied
+previous section and edit it so it is the same as the following example, or simply paste the following
+statement into the query editor.
+example to execute the stored procedure we just created
+nvarchar(max) =
+"CustomerId": 5,
+"Name": "Lucy",
+"Location": "Canada",
+"Email": "lucy0@adventure-works.com"
+dbo.setCustomer @json_val = @json
+dbo.getCustomer @ID = 5
+
+
+-- example to execute the stored procedure we just created
+declare @json nvarchar
+N'[
+ {
+ "CustomerId": 5,
+ "Name": "Lucy"
