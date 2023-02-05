@@ -1,0 +1,7 @@
+docker stats container----------->which tells the statistics of the container
+docker history image -----------> Show the history of an image.
+docker logs containerid--------------->it shows the logs of the container
+docker diff c--------------->Inspect changes to files or directories on a container's filesystem.
+docker port ----------->  is used to access the services running inside a Docker container.
+docker export ----------->is used to save a Docker container to a tar file. 
+docker load-------------> Load an image or repository from a tar archive 
