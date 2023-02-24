@@ -1,2 +1,9 @@
-plugin--pipeline Maven Integration ...which is used for the maven enviraonment 
+Dsl statements:
+----------------------------
+
+plugin--pipeline Maven Integration ..dslstat3ement (with maven:provide maven environment)...which is used for the maven enviraonment 
 isUnix -----is used to check whether the stage is running on linux or windows
+tools ---is used for declartion of tools 
+environment ---used for declaring environment variables
+dir-----dsl statement to change directory
+build discarder--section to reduce disk space issues and to many only limited builds
