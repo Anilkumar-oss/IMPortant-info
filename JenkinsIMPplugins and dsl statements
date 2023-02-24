@@ -1,0 +1,2 @@
+plugin--pipeline Maven Integration ...which is used for the maven enviraonment 
+isUnix -----is used to check whether the stage is running on linux or windows
