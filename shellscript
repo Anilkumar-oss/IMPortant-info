@@ -1,0 +1,16 @@
+echo $0--commandlin eargument
+To find your current shells...cat /etc/shells
+echo $SHELL--To find current shell
+Types of shells
+---------------------
+sh 
+bash
+csh
+tsh
+ksh
+zsh
+alias list="ls -la"
+How to display the builtin commands
+--------------------------------------
+compgen -b
+
