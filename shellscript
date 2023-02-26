@@ -14,3 +14,28 @@ How to display the builtin commands
 --------------------------------------
 compgen -b
 
+echo $$ --process id particular shell
+echo $0 --creates the current shell
+ech $?--exit status of commands
+man type(shell builtin..)
+type ....[type for ...for is loop..]
+file ---determine the file type
+command/enable are shell builtin
+
+#/bin/bash
+tool="k8s"
+echo $tool  //it will display the value/content of the variable
+echo "$tool" //it also display the value of the variable
+echo '$tool' 
+echo \$tool
+echo ent3er one more tool
+read tool
+echo '$tool' now equals with $tool 
+readonly --is used to declare the constants
+export --command in 
+if we need to use the variable is a child shell
+we need to export
+parent process can export the variable to child but child process can not export the parent
+----------------------
+
+
